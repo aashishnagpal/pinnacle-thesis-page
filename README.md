@@ -6,3 +6,4 @@ Will be using skeleton framework and gulp to help with updating the project as I
 
 
 
+[live link](https://oscarrobertrodriguez.github.io/pinnacle-thesis-page/)
