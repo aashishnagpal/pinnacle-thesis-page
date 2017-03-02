@@ -71,10 +71,31 @@ body {
 
 
 
-.featured-bg-image--color::before {
-	
- opacity: 1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Logo styles 
+
+
+.logo-image__container {
 }
+
+.logo-image {
+	margin: 0 auto;
+	width: 300px;
+	
+}
+
 
 
 // Primary header styles 
@@ -160,6 +181,14 @@ body {
 	
 
 }
+
+
+//  removes the opacity from the background images
+.featured-bg-image--color::before {
+	
+ opacity: 1;
+}
+
 
 
 .article-title {
@@ -253,3 +282,9 @@ body {
 	width: 100%;
 	height: 100%;
 }
+
+
+
+
+
+
