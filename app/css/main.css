@@ -50,8 +50,9 @@ body {
     height: 1px;
     background-color: #3C2B2F; }
 
-.featured-bg-image--color::before {
-  opacity: 1; }
+.logo-image {
+  margin: 0 auto;
+  width: 300px; }
 
 .student-name {
   color: #E37779;
@@ -109,6 +110,9 @@ body {
 
 .article-image::before {
   background-image: url(../images/help_bg_image_new.jpg); }
+
+.featured-bg-image--color::before {
+  opacity: 1; }
 
 .article-title {
   color: #AEBEC1;
