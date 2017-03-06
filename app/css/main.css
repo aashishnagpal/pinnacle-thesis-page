@@ -166,22 +166,20 @@ body {
   padding-bottom: 25px; }
 
 .footer-form__input.footer-form__input {
-  display: block;
   color: #506D71;
-  background: #98A7AA;
+  background: transparent;
   font-size: 1.9rem;
-  width: 100%;
+  width: 90%;
   height: 60px;
   border: none;
   padding-left: 15px; }
 
 .form-button {
-  display: block;
   color: #000;
-  width: 100%;
+  width: 90%;
   height: 60px;
   font-size: 1.5rem;
-  padding: 0; }
+  padding-left: 15px; }
 
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
@@ -198,3 +196,49 @@ body {
 :-moz-placeholder {
   /* Firefox 18- */
   color: #506D71; }
+
+/* Animation for Footer  */
+.six.columns {
+  position: relative; }
+
+.bg-class {
+  background: #98A7AA;
+  width: 90%;
+  height: 60px;
+  border-radius: 5px;
+  z-index: -1;
+  position: absolute;
+  left: 22px; }
+
+input[type="text"]:focus ~ img,
+input[type="button"]:focus ~ img {
+  opacity: 1;
+  position: absolute;
+  left: 0; }
+
+input[type="text"]:valid ~ img {
+  -webkit-animation: reveal 1s ease;
+          animation: reveal 1s ease;
+  -webkit-transform: translateX(20deg);
+          transform: translateX(20deg); }
+
+.focused-indicator {
+  position: absolute;
+  left: 0;
+  opacity: 0; }
+
+@-webkit-keyframes reveal {
+  0% {
+    -webkit-mask-position: 0%;
+            mask-position: 0%; }
+  25% {
+    -webkit-mask-position: 100%;
+            mask-position: 100%; } }
+
+@keyframes reveal {
+  0% {
+    -webkit-mask-position: 0%;
+            mask-position: 0%; }
+  25% {
+    -webkit-mask-position: 100%;
+            mask-position: 100%; } }

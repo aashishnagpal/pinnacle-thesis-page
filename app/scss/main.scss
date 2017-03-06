@@ -278,11 +278,11 @@ body {
 
 
 .footer-form__input.footer-form__input {
-	display: block;
+	
 	color: #506D71;
-	background: #98A7AA;
+	background: transparent;
 	font-size: 1.9rem;
-	width: 100%;
+	width: 90%;
 	height: 60px;
 	border: none;
 	padding-left: 15px;
@@ -290,14 +290,13 @@ body {
 
 
 .form-button {
-	display: block;
+	
 	color: #000;
-	width: 100%;
+	width: 90%;
 	height: 60px;
 	font-size: 1.5rem;
-	padding: 0;
+	padding-left: 15px;
 }
-
 
 
 
@@ -316,6 +315,32 @@ body {
 }
 
 
+
+
+/* Animation for Footer  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes reveal  {
+	0% {
+		mask-position: 0%; 
+	}
+	
+	25% {
+		mask-position: 100%; 
+	}
+}
 
 
 
