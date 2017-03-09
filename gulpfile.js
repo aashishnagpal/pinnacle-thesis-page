@@ -1,3 +1,4 @@
+'use strict';
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
@@ -8,79 +9,134 @@ var cssnano = require('gulp-cssnano');
 var cache = require('gulp-cache');
 var images = require('gulp-imagemin');
 var del = require('del');
-var runSequence = require('run-sequence') ;
+var runSequence = require('run-sequence');
 var autoprefixer = require('gulp-autoprefixer');
 
 
-gulp.task('sass', function() {
- return	gulp.src('app/scss/**/*.scss')
-	  .pipe(sass())
-	  .pipe(autoprefixer())
-	  .pipe(gulp.dest('app/css'))
-	  .pipe(browserSync.reload({
-		  stream: true
-	  }))
+gulp.task('sass', function () {
+  return gulp.src('app/scss/**/*.scss')
+      .pipe(sass())
+      .pipe(autoprefixer())
+      .pipe(gulp.dest('app/css'))
+      .pipe(browserSync.reload({
+        stream: true
+      }));
 });
 
 
-gulp.task('browserSync', function() {
-	browserSync.init({
-		server: {
-			baseDir: 'app'
-		},
-	})
-})
-
-
-gulp.task('useref' , function() {
-	return gulp.src('app/*.html')
-	 .pipe(useref())
-	 .pipe(gulpIf('*.js', uglify()))
-	 .pipe(gulpIf('*.css', cssnano()))
-	 .pipe(gulp.dest('dist'))
+gulp.task('browserSync', function () {
+  browserSync.init({
+    server: {
+      baseDir: 'dist'
+    }
+  })
 });
 
 
-gulp.task('images', function(){
+gulp.task('useref', function () {
+  return gulp.src('app/*.html')
+      .pipe(useref())
+      .pipe(gulpIf('*.js', uglify()))
+      .pipe(gulpIf('*.css', cssnano()))
+      .pipe(gulp.dest('dist'))
+});
+
+
+gulp.task('images', function () {
   return gulp.src('app/images/**/*.+(png|jpg|jpeg|gif|svg)')
- 
-  .pipe(gulp.dest('dist/images'))
+      .pipe(gulp.dest('dist/images'))
 });
 
-gulp.task('fonts', function() {
-	return gulp.src('app/fonts/**/*')
-	.pipe(gulp.dest('dist/fonts'))
-});
-
-
-gulp.task('clean:dist', function() {
-	return del.sync('dist');
+gulp.task('fonts', function () {
+  return gulp.src('app/fonts/**/*')
+      .pipe(gulp.dest('dist/fonts'))
 });
 
 
-
-gulp.task('build', function(callback) {
-	runSequence('clean:dist', ['sass', 'useref', 'images', 'fonts'], 
-	  callback
-	)
-})
-
-gulp.task('default', function(callback) {
-	runSequence(['sass', 'useref', 'images', 'fonts'], 
-	  callback
-	)
-})
-
-
-
-
-gulp.task('watch', ['browserSync', 'sass'], function() {
-	gulp.watch('app/scss/**/*.scss', ['sass']);
-	gulp.watch('app/*.html', browserSync.reload);
-	gulp.watch('app/js/**/*.js', browserSync.reload);
+gulp.task('clean:dist', function () {
+  return del.sync('dist');
 });
 
 
+gulp.task('build', function (callback) {
+  runSequence('clean:dist', 'build:handlebar', ['sass', 'images', 'fonts', 'copy'], 'useref',
+      callback
+  )
+});
+
+gulp.task('default', function (callback) {
+  runSequence('build', ['browserSync', 'watch'], callback);
+});
+
+
+gulp.task('watch', ['browserSync', 'sass'], function () {
+  gulp.watch('app/scss/**/*.scss', ['sass']);
+  gulp.watch('app/*.html', browserSync.reload);
+  gulp.watch('app/js/**/*.js', ['scripts', browserSync.reload]);
+  gulp.watch('app/templates/**/*.hbs', ['build:handlebar', browserSync.reload]);
+});
+
+
+/* Handlebars Pre-compilation config */
+var handlebars = require('gulp-handlebars');
+var wrap = require('gulp-wrap');
+var declare = require('gulp-declare');
+var concat = require('gulp-concat');
+var merge = require('merge-stream');
+var path = require('path');
+
+gulp.task('templates', function () {
+  var partials = gulp.src(['app/templates/_*.hbs'])
+      .pipe(handlebars({
+        handlebars: require('handlebars')
+      }))
+      .pipe(wrap('Handlebars.registerPartial(<%= processPartialName(file.relative) %>, Handlebars.template(<%= contents %>));', {}, {
+        imports: {
+          processPartialName: function (fileName) {
+            // Strip the extension and the underscore
+            // Escape the output with JSON.stringify
+            console.log(path.basename(fileName, '.js'));
+            return JSON.stringify(path.basename(fileName, '.js').substr(1));
+          }
+        }
+      }));
+
+  var templates = gulp.src('app/templates/[^_]*.hbs')
+      .pipe(handlebars({
+        handlebars: require('handlebars')
+      }))
+      .pipe(wrap('Handlebars.template(<%= contents %>)'))
+      .pipe(declare({
+        namespace: 'ppt.templates',
+        noRedeclare: true // Avoid duplicate declarations
+      }));
+
+  return merge(partials, templates)
+      .pipe(concat('templates.js'))
+      .pipe(gulp.dest('dist'));
+});
+
+gulp.task('scripts', function () {
+  return gulp.src([
+    'node_modules/handlebars/dist/handlebars.runtime.js',
+    'dist/templates.js',
+    'app/js/**/*.js'
+  ])
+      .pipe(concat('bundle.js'))
+      .pipe(uglify())
+      .pipe(gulp.dest('dist'));
+});
+
+gulp.task('copy', function () {
+  gulp.src('app/index.html')
+      .pipe(gulp.dest('dist'));
+  gulp.src('app/css/**/*.css')
+      .pipe(gulp.dest('dist'));
+});
+
+gulp.task('build:handlebar', function (callback) {
+  runSequence('templates', 'scripts', callback);
+});
 
 
 
