@@ -1,0 +1,35 @@
+{
+  "pinnacleProject": {
+    "fullName": "Vojislav Grujić",
+    "careerPathsAndGradDates": [
+      "Advanced Frontend Developer,  July 2017",
+      "Advanced Fullstack Developer,  December 2017"
+    ],
+
+    "title": "The Great Pineapple Project",
+    "featuredImage": "http://pineappleXYZ3D.jpg",
+    "description": "This will be the most abstract pineapple project... I like pineapples!",
+
+    "problemSolving": "All problems you can imagine. Alllll of them!",
+    "solution": "FTATD!",
+    "humanityImpact": "Impacts like a meteor that wiped out the dinosaurus.",
+
+    "teamProject": "yes",
+    "team": [
+      "no",
+      "body",
+      "with",
+      "me",
+      "I'm",
+      "alone"
+    ],
+    "thesisApproved": "yes",
+
+    "completionDate": "",
+    "link": "http://here.and.there.bla",
+    "thesisPageLink": "http://doesnt.exist.ydfdet.x.x.x.s.dfdd",
+    "typeOfProject": "enlightenment",
+    "revenueModel": "open-source",
+    "thesisSubmissionDate": "Sat, 04 Mar 2017 00:20:19 GMT"
+  }
+}

@@ -1,0 +1,9 @@
+{{#isTeamProject teamProject}}
+<div class="row contributers-container">
+    <p class="contributers"><span class="contributers__span">Team:</span>
+        {{#each team}}
+            <a class="name__link" href="#">{{.}}</a>
+        {{/each}}
+    </p>
+</div>
+{{/isTeamProject}}

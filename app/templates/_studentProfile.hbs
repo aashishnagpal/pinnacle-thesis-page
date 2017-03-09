@@ -1,0 +1,13 @@
+<div class="row twelve columns">
+    <h1 class="student-name">
+        <!--Rafael <span class="last-name">Nunez</span>-->
+        {{fullName}}
+    </h1>
+</div>
+
+<div class="row twelve columns">
+    {{#each careerPathsAndGradDates}}
+        <p class="career-path">{{.}}</p>
+    {{/each}}
+    <!--<p class="career-path">Advanced full stack developer, December 2017</p>-->
+</div>
