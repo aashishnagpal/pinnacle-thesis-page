@@ -26,6 +26,7 @@ gulp.task('sass', function () {
 
 gulp.task('browserSync', function () {
   browserSync.init({
+    port: 9000,
     server: {
       baseDir: 'dist'
     }
@@ -71,7 +72,7 @@ gulp.task('default', function (callback) {
 
 gulp.task('watch', ['browserSync', 'sass'], function () {
   gulp.watch('app/scss/**/*.scss', ['sass']);
-  gulp.watch('app/*.html', browserSync.reload);
+  gulp.watch('app/*.html', ['copy', browserSync.reload]);
   gulp.watch('app/js/**/*.js', ['scripts', browserSync.reload]);
   gulp.watch('app/templates/**/*.hbs', ['build:handlebar', browserSync.reload]);
 });

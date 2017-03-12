@@ -8,17 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OscarRobertRodriguez/pinnacle-thesis-page.git"
+    "url": "git+https://github.com/aashishnagpal/pinnacle-thesis-page.git"
   },
   "keywords": [
     "project"
   ],
-  "author": "oscar rodriguez, aashish nagpal",
+  "author": "aashish nagpal",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/OscarRobertRodriguez/pinnacle-thesis-page/issues"
+    "url": "https://github.com/aashishnagpal/pinnacle-thesis-page/issues"
   },
-  "homepage": "https://github.com/OscarRobertRodriguez/pinnacle-thesis-page#readme",
+  "homepage": "https://github.com/aashishnagpal/pinnacle-thesis-page#readme",
   "devDependencies": {
     "browser-sync": "^2.18.8",
     "del": "^2.2.2",
