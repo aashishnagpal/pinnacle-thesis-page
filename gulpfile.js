@@ -140,8 +140,12 @@ gulp.task('build:handlebar', function (callback) {
   runSequence('templates', 'scripts', callback);
 });
 
-
-
+/*Gulp gh-pages deploy script*/
+var deployGhPages = require('gulp-gh-pages');
+gulp.task('deploy', ['build'], function () {
+  return gulp.src("./dist/**/*")
+      .pipe(deployGhPages())
+});
 
 
 
