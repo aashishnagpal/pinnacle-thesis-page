@@ -95,7 +95,6 @@ gulp.task('templates', function () {
           processPartialName: function (fileName) {
             // Strip the extension and the underscore
             // Escape the output with JSON.stringify
-            console.log(path.basename(fileName, '.js'));
             return JSON.stringify(path.basename(fileName, '.js').substr(1));
           }
         }
@@ -113,25 +112,27 @@ gulp.task('templates', function () {
 
   return merge(partials, templates)
       .pipe(concat('templates.js'))
-      .pipe(gulp.dest('dist'));
+      .pipe(uglify())
+      .pipe(gulp.dest('app/templates'));
 });
 
 gulp.task('scripts', function () {
   return gulp.src([
     'node_modules/handlebars/dist/handlebars.runtime.js',
-    'dist/templates.js',
+    'app/templates/templates.js',
     'app/js/**/*.js'
   ])
       .pipe(concat('bundle.js'))
       .pipe(uglify())
-      .pipe(gulp.dest('dist'));
+      .pipe(gulp.dest('dist/scripts'));
 });
 
 gulp.task('copy', function () {
   gulp.src('app/index.html')
       .pipe(gulp.dest('dist'));
+
   gulp.src('app/css/**/*.css')
-      .pipe(gulp.dest('dist'));
+      .pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('build:handlebar', function (callback) {
