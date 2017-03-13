@@ -7,3 +7,12 @@
 
 ### Node template
 node_modules
+
+### Gulp gh-pages
+.publish
+
+### App's distribution directory
+dist
+
+### App's generated CSS
+app/css/*.css
