@@ -114,13 +114,13 @@ gulp.task('templates', function () {
   return merge(partials, templates)
       .pipe(concat('templates.js'))
       .pipe(uglify())
-      .pipe(gulp.dest('app/templates'));
+      .pipe(gulp.dest('dist/templates'));
 });
 
 gulp.task('scripts', function () {
   return gulp.src([
     'node_modules/handlebars/dist/handlebars.runtime.js',
-    'app/templates/templates.js',
+    'dist/templates/templates.js',
     'app/js/**/*.js'
   ])
       .pipe(concat('bundle.js'))
@@ -131,9 +131,6 @@ gulp.task('scripts', function () {
 gulp.task('copy', function () {
   gulp.src('app/index.html')
       .pipe(gulp.dest('dist'));
-
-  gulp.src('app/css/**/*.css')
-      .pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('build:handlebar', function (callback) {
@@ -143,8 +140,10 @@ gulp.task('build:handlebar', function (callback) {
 /*Gulp gh-pages deploy script*/
 var deployGhPages = require('gulp-gh-pages');
 gulp.task('deploy', ['build'], function () {
-  return gulp.src("./dist/**/*")
-      .pipe(deployGhPages())
+  return gulp.src('./dist/**/*')
+      .pipe(deployGhPages({
+        message: 'Deploy Updates'
+      }))
 });
 
 
