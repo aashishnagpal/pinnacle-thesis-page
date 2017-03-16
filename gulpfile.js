@@ -72,6 +72,7 @@ gulp.task('default', function (callback) {
 
 gulp.task('watch', ['browserSync', 'sass'], function () {
   gulp.watch('app/scss/**/*.scss', ['sass']);
+  gulp.watch('app/css/**/*.css', ['useref', browserSync.reload]);
   gulp.watch('app/*.html', ['copy', browserSync.reload]);
   gulp.watch('app/js/**/*.js', ['scripts', browserSync.reload]);
   gulp.watch('app/templates/**/*.hbs', ['build:handlebar', browserSync.reload]);

@@ -11,7 +11,7 @@
   });
 
   Handlebars.registerHelper('replaceNewLineFeeds', function (content) {
-    return '<p>' + content.replace(/\n{2,}/g, '</p><p>').replace(/\n/, '<br>') + '</p>';
+    return '<p>' + content.replace(/\n+/g, '</p><p>') + '</p>';
   });
 
   var testData = {

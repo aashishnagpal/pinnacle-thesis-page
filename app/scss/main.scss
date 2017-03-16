@@ -1,9 +1,10 @@
 
 body {
 	text-align: center;
-	line-height: 2;
 	color: #fff;
 	background: #011217;
+	font-size: 1.8em;
+	line-height: 1.8;
 }
 
 * {
@@ -92,16 +93,16 @@ body {
 
 .logo-image {
 	margin: 0 auto;
-	width: 300px;
-	
+	width: 20em;
+	opacity: 0.8;
 }
 
 
 
-// Primary header styles 
+// Primary header styles
 
 .primary-header {
-	
+
 }
 
 
@@ -119,11 +120,31 @@ body {
 }
 
 .primary-header__h2 {
-	color: #E17577;
+	color: #905c5d;
 	text-transform: uppercase;
-	font-size: 2.5rem;
+	font-size: 2.0rem;
 	letter-spacing: 10px;
 	word-spacing: 5px;
+	display: inline-block;
+	padding: 0.5em 0;
+	position: relative;
+
+	&::before, &::after {
+		content: '';
+		width: 98%;
+		height: 1px;
+		background-color: #905c5d;
+		position: absolute;
+		left: 0;
+	}
+
+	&::before {
+		top: -1px;
+	}
+
+	&::after {
+		bottom: -1px;
+	}
 }
 
 
@@ -211,7 +232,7 @@ body {
 }
 
  .main-section__sub-section {
-	 color: #97A6A9;
+	 color: #aebfc3;
 	padding-top: 2rem;
 	
 
