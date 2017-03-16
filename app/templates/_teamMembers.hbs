@@ -1,9 +1,24 @@
 {{#isTeamProject teamProject}}
-<div class="row contributers-container">
-    <p class="contributers"><span class="contributers__span">Team:</span>
-        {{#each team}}
-            <a class="name__link" href="#">{{.}}</a>
-        {{/each}}
-    </p>
-</div>
+  <div class="row team-list-container">
+    <p class="team-list-container__title">Team</p>
+    <div class="team-list">
+      {{#each team}}
+        <div class="team__member-name">{{this.name}}</div>
+        <div class="team__member-info">
+          <div class="team__member-pic">
+            <img src="{{this.image}}">
+          </div>
+          <div class="team__member-details">
+            <div class="team__member-social-links">
+              <a class="team__social-link" href="{{this.twitter}}"><img src="images/twitter.png"></a>
+              <a class="team__social-link" href="{{this.gh}}"><img src="images/github.png"></a>
+              <a class="team__social-link" href="{{this.fb}}"><img src="images/facebook.png"></a>
+              <a class="team__social-link" href="{{this.linkedin}}"><img src="images/linkedin.png"></a>
+            </div>
+            <p class="team__member-about">{{this.about}}</p>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
 {{/isTeamProject}}
