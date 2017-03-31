@@ -122,7 +122,8 @@ gulp.task('scripts', function () {
   return gulp.src([
     'node_modules/handlebars/dist/handlebars.runtime.js',
     'dist/templates/templates.js',
-    'app/js/**/*.js'
+    'app/js/mailing-form-masking.js',
+    'app/js/app.js'
   ])
       .pipe(concat('bundle.js'))
       .pipe(uglify())

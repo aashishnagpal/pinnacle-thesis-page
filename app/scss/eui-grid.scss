@@ -1,0 +1,62 @@
+.eui-grid {
+  $columns: 12 !default;
+  $gutter-width: 1.6% !default;
+
+  &__container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__row {
+    width: 100%;
+    display: flex;
+  }
+
+  &__column {
+    margin: 1% 0 1% $gutter-width;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  @function get-atomic-width($columns, $gutter-width) {
+    @return (100 - ($gutter-width * ($columns - 1))) / $columns;
+  }
+
+  @function col-width($columns, $gutter-width, $col-size) {
+    $col-content-width: $col-size * get-atomic-width($columns, $gutter-width);
+    $added-gutter: ($col-size - 1) * $gutter-width;
+
+    @return floor(($col-content-width + $added-gutter) * 100000) / 100000;
+  }
+
+  @function offset-margin($columns, $gutter-width, $col-size) {
+    $offset-width: $col-size * get-atomic-width($columns, $gutter-width);
+    $added-gutter: $col-size * $gutter-width;
+
+    @return floor(($offset-width + $added-gutter + $gutter-width) * 100000) / 100000;
+  }
+
+  @for $col-size from 1 through $columns {
+    &__col-size-#{$col-size}-of-#{$columns} {
+      width: col-width($columns, $gutter-width, $col-size);
+    }
+  }
+
+  @for $col-size from 1 through ($columns - 1) {
+    $offset: offset-margin($columns, $gutter-width, $col-size);
+    &__offset-by-#{$col-size}-col {
+      margin-left: $offset;
+
+      &:first-child {
+        margin-left: $offset - $gutter-width;
+      }
+    }
+  }
+}

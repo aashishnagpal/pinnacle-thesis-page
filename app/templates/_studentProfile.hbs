@@ -1,9 +1,12 @@
-<div class="row twelve columns">
+<div class="eui-grid__row">
+  <div class="eui-grid__column eui-grid__col-size-12-of-12">
     <h1 class="student-name">{{fullName}}</h1>
+  </div>
 </div>
-
-<div class="row twelve columns">
+<div class="eui-grid__row">
+  <div class="eui-grid__column eui-grid__col-size-12-of-12">
     {{#each careerPathsAndGradDates}}
-        <p class="career-path">{{.}}</p>
+      <p class="career-path">{{.}}</p>
     {{/each}}
+  </div>
 </div>

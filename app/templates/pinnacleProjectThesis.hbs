@@ -1,62 +1,34 @@
-<header class="u-full-width   primary-header">
-  <div class="container">
-    <div class="row u-full-width logo-image__container">
+<header class="eui-grid__container">
+  <div class="eui-grid__row">
+    <div class="eui-grid__column eui-grid__col-size-12-of-12">
       <img class="logo-image" src="images/logo.png">
     </div>
+  </div>
 
-    {{> studentProfile }}
+  {{> studentProfile }}
 
-    <div class="row twelve columns">
-      <h2 class="primary-header__h2">Pinnacle Project Thesis</h2>
+  <div class="eui-grid__row">
+    <div class="eui-grid__column eui-grid__col-size-12-of-12">
+      <h2 class="page-title">Pinnacle Project Thesis</h2>
     </div>
   </div>
 </header>
-{{> projectName }}
+<section class="eui-grid__container">
+  {{> projectName }}
+</section>
+<section class="eui-grid__container thesis">
+  {{> projectDetails content=description}}
+  {{> projectDetails heading="Problem" content=problemSolving}}
+  {{> projectDetails heading="Solution" content=solution}}
+  {{> projectDetails heading="Project's Impact on Humanity" content=humanityImpact}}
+</section>
+<section class="eui-grid__container">
+  {{> teamMembers}}
+</section>
 
-<main class="u-full-width  main-section">
-  <div class="container">
-    {{> projectDetails content=description}}
-    {{> projectDetails heading="Problem" content=problemSolving}}
-    {{> projectDetails heading="Solution" content=solution}}
-    {{> projectDetails heading="Project's Impact on Humanity" content=humanityImpact}}
+<section class="eui-grid__container join-team-form">
+  {{> joinTeamForm}}
+</section>
+<!--<footer class="primary-footer separator">-->
 
-    {{> teamMembers}}
-  </div>
-</main>
-
-<footer class="u-full-width  primary-footer separator">
-  <div class="container">
-    <h4 class="primary-footer__header">Help to advance man's understanding of Evolution</h4>
-    <form>
-      <div class="row">
-        <div class="six columns" class="input-container">
-          <label for="input-1"></label>
-          <div class="bg-class"></div>
-          <input type="text" placeholder="First Name" class="footer-form__input mask-y" id="input-1"
-                 required="true">
-          <img class="focused-indicator" src="images/indicator.png">
-        </div>
-
-        <div class="six columns" class="input-container_2">
-          <label for="input-2"></label>
-          <input type="text" placeholder="Last Name" class="footer-form__input" id="input-2" required="true">
-          <img class="focused-indicator" src="images/indicator.png">
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="six columns">
-          <label for="input-3"></label>
-          <input type="text" placeholder="Email Address" class="footer-form__input" id="input_3">
-          <img class="focused-indicator" src="images/indicator.png">
-        </div>
-
-        <div class="six columns">
-          <label for="input-4"></label>
-          <button class="button-primary  form-button">I would like to help</button>
-          <img class="focused-indicator" src="images/indicator.png">
-        </div>
-      </div>
-    </form>
-  </div>
-</footer>
+<!--</footer>-->

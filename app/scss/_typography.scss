@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+
+html {
+  font-size: 10px;
+}
+
+body {
+  box-sizing: border-box;
+  background: #011217;
+  margin: 0 auto;
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  font-size: 1.8em;
+  line-height: 1.8;
+  color: #aebfc3;
+  text-align: center;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+$headers: h1,h2,h3,h4,h5,h6;
+$font-sizes: 4rem, 3.6rem, 3rem, 2.4rem, 1.8rem, 1.5rem !default;
+$line-heights: 1.2, 1.25, 1.3, 1.35, 1.5, 1.6;
+$letter-spacings: -1px, -1px, -1px, -0.8px, -0.5px, 0;
+$zipped: zip($headers, $font-sizes, $line-heights, $letter-spacings) !default;
+
+%header {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+@each $header, $font-size, $line-height, $letter-spacing in $zipped {
+  #{$header} {
+    @extend %header;
+    font-size: $font-size;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+  }
+}
+
+@media (min-width: 550px) {
+  $font-sizes: 5rem, 4.2rem, 3.6rem, 3rem, 2.4rem, 1.8rem;
+  $zipped: zip($headers, $font-sizes);
+  @each $header, $font-size in $zipped {
+    #{$header} {
+      font-size: $font-size;
+    }
+  }
+}
+
+p {
+  margin-top: 0;
+}

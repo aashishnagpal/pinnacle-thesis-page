@@ -1,6 +1,7 @@
 {
   "pinnacleProject": {
     "fullName": "Vojislav Grujić",
+    "email": "vojislav.grujic@gmail.com",
     "careerPathsAndGradDates": [
       "Advanced Frontend Developer, July 2017",
       "Advanced Fullstack Developer, December 2017"
@@ -14,60 +15,75 @@
     "teamProject": "yes",
     "team": [
       {
-        "name": "Jonas Lininger",
-        "image": "https://images.pexels.com/photos/101584/pexels-photo-101584.jpeg?w=470&h=200&auto=compress&cs=tinysrgb",
+        "firstName": "Jonas",
+        "lastName": "Lininger",
+        "photoUrl": "https://images.pexels.com/photos/101584/pexels-photo-101584.jpeg?w=470&h=210&auto=compress&cs=tinysrgb",
         "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a semper sem. Ut pellentesque libero ut ultricies vehicula. Morbi suscipit felis nulla, luctus ornare nunc fringilla et",
-        "twitter": "#",
-        "fb": "#",
-        "gh": "#",
-        "linkedin": "#"
+        "portfolioUrl": "#",
+        "githubUrl": "#",
+        "twitterUrl": "#",
+        "facebookUrl": "#",
+        "linkedInUrl": "#"
       },
       {
-        "name": "Mariam Casaus",
-        "image": "https://images.pexels.com/photos/27411/pexels-photo-27411.jpg?w=470&h=200&auto=compress&cs=tinysrgb",
+        "firstName": "Mariam",
+        "lastName": "Casaus",
+        "photoUrl": "https://images.pexels.com/photos/27411/pexels-photo-27411.jpg?w=470&h=210&auto=compress&cs=tinysrgb",
         "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a semper sem. Ut pellentesque libero ut ultricies vehicula. Morbi suscipit felis nulla, luctus ornare nunc fringilla et",
-        "twitter": "#",
-        "fb": "#",
-        "gh": "#",
-        "linkedin": "#"
+        "portfolioUrl": "#",
+        "githubUrl": "#",
+        "twitterUrl": "#",
+        "facebookUrl": "#",
+        "linkedInUrl": "#"
       },
       {
-        "name": "Herbert Stamper",
-        "image": "https://images.pexels.com/photos/119705/pexels-photo-119705.jpeg?w=470&h=200&auto=compress&cs=tinysrgb",
+        "firstName": "Herbert",
+        "lastName": "Stamper",
+        "photoUrl": "https://images.pexels.com/photos/119705/pexels-photo-119705.jpeg?w=470&h=210&auto=compress&cs=tinysrgb",
         "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a semper sem. Ut pellentesque libero ut ultricies vehicula. Morbi suscipit felis nulla, luctus ornare nunc fringilla et",
-        "twitter": "#",
-        "fb": "#",
-        "gh": "#",
-        "linkedin": "#"
+        "portfolioUrl": "#",
+        "githubUrl": "#",
+        "twitterUrl": "#",
+        "facebookUrl": "#",
+        "linkedInUrl": "#"
       },
       {
-        "name": "Alyssa Mcglothin",
-        "image": "https://images.pexels.com/photos/206559/pexels-photo-206559.jpeg?w=470&h=200&auto=compress&cs=tinysrgb",
+        "firstName": "Alyssa",
+        "lastName": "Mcglothin",
+        "photoUrl": "https://images.pexels.com/photos/206559/pexels-photo-206559.jpeg?w=470&h=210&auto=compress&cs=tinysrgb",
         "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a semper sem. Ut pellentesque libero ut ultricies vehicula. Morbi suscipit felis nulla, luctus ornare nunc fringilla et",
-        "twitter": "#",
-        "fb": "#",
-        "gh": "#",
-        "linkedin": "#"
+        "portfolioUrl": "#",
+        "githubUrl": "#",
+        "twitterUrl": "#",
+        "facebookUrl": "#",
+        "linkedInUrl": "#"
       },
       {
-        "name": "Claudio Cunha",
-        "image": "https://images.pexels.com/photos/211050/pexels-photo-211050.jpeg?w=470&h=200&auto=compress&cs=tinysrgb",
+        "firstName": "Claudio",
+        "lastName": "Cunha",
+        "photoUrl": "https://images.pexels.com/photos/211050/pexels-photo-211050.jpeg?w=470&h=210&auto=compress&cs=tinysrgb",
         "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a semper sem. Ut pellentesque libero ut ultricies vehicula. Morbi suscipit felis nulla, luctus ornare nunc fringilla et",
-        "twitter": "#",
-        "fb": "#",
-        "gh": "#",
-        "linkedin": "#"
+        "portfolioUrl": "#",
+        "githubUrl": "#",
+        "twitterUrl": "#",
+        "facebookUrl": "#",
+        "linkedInUrl": "#"
       },
       {
-        "name": "Elvera Stacks",
-        "image": "https://images.pexels.com/photos/27949/pexels-photo-27949.jpg?w=470&h=200&auto=compress&cs=tinysrgb",
+        "firstName": "Elvera",
+        "lastName": "Stacks",
+        "photoUrl": "https://images.pexels.com/photos/27949/pexels-photo-27949.jpg?w=470&h=210&auto=compress&cs=tinysrgb",
         "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a semper sem. Ut pellentesque libero ut ultricies vehicula. Morbi suscipit felis nulla, luctus ornare nunc fringilla et",
-        "twitter": "#",
-        "fb": "#",
-        "gh": "#",
-        "linkedin": "#"
+        "portfolioUrl": "#",
+        "githubUrl": "#",
+        "twitterUrl": "#",
+        "facebookUrl": "#",
+        "linkedInUrl": "#"
       }
     ],
+    "mailChimpFormTitle": "Join my project and help Advance humanity",
+    "mailChimpAPIKey": "http://mailchimp.com/api",
+    "mailListID": "sdczx161vx",
     "thesisApproved": "yes",
     "completionDate": "",
     "link": "http://here.and.there.bla",

@@ -1,0 +1,35 @@
+<div class="team__member-info">
+  <div class="team__member-pic">
+    <img src="{{this.photoUrl}}">
+  </div>
+  <div class="team__member-details">
+    <div class="team__member-social-links">
+      {{#if this.portfolioUrl}}
+        <a class="team__social-link" href="{{this.portfolioUrl}}">
+          <i class="fa fa-globe" aria-hidden="true"></i>
+        </a>
+      {{/if}}
+      {{#if this.twitterUrl}}
+        <a class="team__social-link" href="{{this.twitterUrl}}">
+          <i class="fa fa-twitter-square" aria-hidden="true"></i>
+        </a>
+      {{/if}}
+      {{#if this.githubUrl}}
+        <a class="team__social-link" href="{{this.githubUrl}}">
+          <i class="fa fa-github-square" aria-hidden="true"></i>
+        </a>
+      {{/if}}
+      {{#if this.facebookUrl}}
+        <a class="team__social-link" href="{{this.facebookUrl}}">
+          <i class="fa fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      {{/if}}
+      {{#if this.linkedInUrl}}
+        <a class="team__social-link" href="{{this.linkedInUrl}}">
+          <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+        </a>
+      {{/if}}
+    </div>
+    <p class="team__member-about">{{this.about}}</p>
+  </div>
+</div>
