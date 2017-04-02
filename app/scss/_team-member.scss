@@ -30,13 +30,15 @@
       margin: 0.5em;
     }
 
-    &:hover > .team__member-name {
-      z-index: 3;
+    //&:hover > .team__member-name,
+    &--is-hovered > .team__member-name {
+      z-index: 30;
     }
 
-    &:hover > .team__member-info {
+    //&:hover > .team__member-info,
+    &--is-hovered > .team__member-info {
       opacity: 1;
-      z-index: 2;
+      z-index: 20;
       pointer-events: inherit;
     }
   }
@@ -57,7 +59,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    z-index: 10;
     cursor: pointer;
   }
 
@@ -99,6 +101,20 @@
 
       @media (max-width: 480px) {
         right: -3.5em;
+      }
+    }
+
+    &__close-icon {
+      font-weight: 300;
+      font-size: 1.5em;
+      position: absolute;
+      right: 0;
+      top: 0;
+      color: #b9c2ce;
+      mix-blend-mode: difference;
+
+      .fa {
+        vertical-align: top;
       }
     }
   }

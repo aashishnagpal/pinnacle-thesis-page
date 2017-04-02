@@ -116,23 +116,7 @@
   window.addEventListener('load', function () {
     document.querySelector('#handlebars-container').innerHTML = html;
 
-    var teammates = document.querySelectorAll('.team__member');
-    var rightmostIndex = teammates.length - 1;
-    for (var i = rightmostIndex; i >= 0; --i) {
-      if (teammates[i].getBoundingClientRect().right > teammates[rightmostIndex].getBoundingClientRect().right) {
-        rightmostIndex = i;
-        break;
-      }
-    }
-
-    [].forEach.call(teammates, function (teammate) {
-      var info = teammate.querySelector('.team__member-info');
-      if (teammate.getBoundingClientRect().left === teammates[0].getBoundingClientRect().left) {
-        info.classList.add('team__member-info--leftmost');
-      } else if (teammate.getBoundingClientRect().right === teammates[rightmostIndex].getBoundingClientRect().right) {
-        info.classList.add('team__member-info--rightmost');
-      }
-    });
+    teamDetails.initialize();
 
     formScannerScript.setMasking();
   });

@@ -15,7 +15,9 @@ var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('sass', function () {
   return gulp.src('app/scss/**/*.scss')
-      .pipe(sass())
+      .pipe(sass({
+        style: 'expanded'
+      }))
       .pipe(autoprefixer())
       .pipe(gulp.dest('app/css'))
       .pipe(browserSync.reload({
@@ -122,6 +124,7 @@ gulp.task('scripts', function () {
   return gulp.src([
     'node_modules/handlebars/dist/handlebars.runtime.js',
     'dist/templates/templates.js',
+    'app/js/team-member.js',
     'app/js/formScanner.js',
     'app/js/app.js'
   ])

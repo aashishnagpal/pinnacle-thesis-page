@@ -102,7 +102,8 @@
     }
 
     &__content {
-      text-align: justify;
+      text-align: left;
+      max-width: 740px;
     }
   }
 }
@@ -119,16 +120,3 @@
   }
 }
 
-// Page Specific Overrides
-@media (max-width: 750px) {
-  .eui-grid__col-size-4-of-12 {
-    width: 49.2%;
-  }
-  .eui-grid__offset-by-2-col {
-    margin-left: 0;
-
-    &:first-child {
-      margin-left: 0;
-    }
-  }
-}
