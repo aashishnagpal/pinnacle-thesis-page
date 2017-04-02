@@ -30,16 +30,38 @@
       margin: 0.5em;
     }
 
-    &--is-hovered > .team__member-name {
+    &:hover > .team__member-name,
+    &--is-hovered:hover > .team__member-name {
       z-index: 30;
     }
 
-    &--is-hovered > .team__member-info {
+    &:hover > .team__member-info,
+    &--is-hovered:hover > .team__member-info {
       opacity: 1;
       z-index: 20;
       pointer-events: inherit;
     }
 
+    @media (max-width: 550px) {
+      &:hover > .team__member-name {
+        z-index: 10;
+      }
+
+      &--is-hovered:hover > .team__member-name {
+        z-index: 30;
+      }
+
+      &:hover > .team__member-info {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      &--is-hovered:hover > .team__member-info {
+        opacity: 1;
+        z-index: 20;
+        pointer-events: inherit;
+      }
+    }
   }
 
   &__member-name {
@@ -104,13 +126,23 @@
     }
 
     &__close-icon {
-      font-weight: 300;
-      font-size: 2em;
       position: absolute;
+      top: 0;
       right: 0;
-      top: -0.5em;
+      height: 1em;
+      width: 1em;
+      background: rgba(255,255,255, 0.5);
+      font-size: 2em;
+      font-weight: 300;
       color: #011217;
-      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+
+      @media (max-width: 550px) {
+        visibility: visible;
+      }
     }
   }
 
