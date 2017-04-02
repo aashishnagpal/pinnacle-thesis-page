@@ -1,0 +1,222 @@
+.formScanner {
+  //margin: 0 auto;
+  //display: flex;
+  width: 100%;
+  //flex-flow: row wrap;
+  //justify-content: center;
+  border-bottom: 1px solid #93abb1;
+  padding: 5rem 0;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1.5rem;
+    left: 0;
+    width: 100%;
+    height: 0.5rem;
+    background: #93abb1;
+  }
+}
+
+.formScanner__inputContainer, .formScanner__submitContainer {
+  position: relative;
+  //margin: 10px;
+  width: 100%;
+  overflow: visible;
+}
+
+.formScanner__input, .formScanner__submit {
+  background-color: #98a7a9;
+  color: #4f6a6f;
+  width: 95%;
+  padding: 14px;
+  font-size: 2rem;
+  height: 50px;
+  border-radius: 4px;
+  border: none;
+  line-height: 0;
+}
+
+.formScanner__input:focus, .formScanner__submit:focus {
+  outline: none;
+  border: none;
+}
+
+.formScanner__input::-webkit-input-placeholder {
+  color: #526d73;
+}
+
+.formScanner__input::-moz-placeholder {
+  color: #526d73;
+  opacity: 1;
+}
+
+.formScanner__input:-ms-input-placeholder {
+  color: #526d73;
+}
+
+.formScanner__submit {
+  background-color: #59bfd4;
+  color: white;
+  font-weight: 300;
+  cursor: pointer;
+  //font-size: 1.1rem;
+}
+
+.formScanner__submit:focus, .formScanner__submit:hover {
+  color: white;
+  background-color: #255761;
+}
+
+.formScanner__inputMask, .formScanner__submitMask {
+  position: absolute;
+  left: -15px;
+  overflow: hidden;
+  top: 0;
+  width: 0;
+  z-index: 3;
+  padding-left: 5px;
+  /*  bgc should match body bgc  */
+  background-color: #011217;
+  cursor: pointer;
+  color: white;
+  transition: width 550ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.formScanner__inputMask > .formScanner__input {
+  /*  bgc should match body bgc  */
+  background-color: #011217;
+  color: #435f64;
+  width: 100%;
+  padding: 1.5rem 1.8rem;
+}
+
+.formScanner__submitMask > .formScanner__submit {
+  background-color: black;
+  color: white;
+  width: 100%;
+  border: none;
+  font-size: 1.1rem;
+}
+
+.formScanner__submitMask > .formScanner__submit:hover {
+  background-color: black;
+  color: white;
+  cursor: default;
+}
+
+.formScanner__inputMaskCover {
+  width: calc(100% + 20px);
+  border-right: 3px solid transparent;
+  overflow: hidden;
+  opacity: 1;
+  animation: formScanner__coverInputAnimation 0.55s;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+}
+
+.formScanner__submitMaskCover {
+  width: calc(100% + 50px);
+  border-right: 3px solid transparent;
+  overflow: hidden;
+  opacity: 1;
+  animation: formScanner__coverSubmitAnimation 1s;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.formScanner__cursor {
+  opacity: 1;
+  animation: formScanner__showCursorAnimation 0.5s;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  border-right: 3px solid lightblue;
+}
+
+.formScanner__input:valid ~ .formScanner__cursor {
+  border-color: lightgreen;
+}
+
+.formScanner__clearInput {
+  opacity: 0;
+  animation: formScanner__clearInputAnimation 0.5s;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+@keyframes formScanner__coverInputAnimation {
+  0% {
+    width: 0;
+    border-right: 3px solid lightgreen;
+  }
+  70% {
+    width: calc(100% + 15px);
+    border-right: 3px solid lightgreen;
+  }
+
+  95% {
+    border-right: 3px solid lightgreen;
+  }
+  100% {
+    border-right: 0;
+  }
+}
+
+@keyframes formScanner__coverSubmitAnimation {
+  0% {
+    width: 0;
+    border-right: 3px solid transparent;
+  }
+  60% {
+    width: 0;
+    border-right: 3px solid transparent;
+  }
+
+  100% {
+    border-right: 3px solid lightgreen;
+  }
+}
+
+@keyframes formScanner__showCursorAnimation {
+  0% {
+    border-right: 0;
+  }
+
+  99% {
+    border-right: 0;
+  }
+  100% {
+    border-right: 3px solid lightgreen;
+  }
+}
+
+@keyframes formScanner__clearInputAnimation {
+  0% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0
+  }
+}
+
+.formScanner__invalidInput {
+  border-right: 3px solid rgba(255, 0, 0, 1);
+  animation: invalidInputAnimation 0.9s;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+@keyframes invalidInputAnimation {
+  0% {
+    border-right: 3px solid rgba(255, 0, 0, 0);
+  }
+
+  33% {
+    border-right: 3px solid rgba(255, 0, 0, 1);
+  }
+
+  66% {
+    border-right: 3px solid rgba(255, 0, 0, 0);
+  }
+
+  100% {
+    border-right: 3px solid rgba(255, 0, 0, 1);
+  }
+}

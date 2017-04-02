@@ -134,7 +134,7 @@
       }
     });
 
-    mailingFormScript.setMasking();
+    formScannerScript.setMasking();
   });
 
 

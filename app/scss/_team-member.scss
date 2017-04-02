@@ -26,6 +26,10 @@
     position: relative;
     flex-basis: 5.5em;
 
+    @media (max-width: 360px) {
+      margin: 0.5em;
+    }
+
     &:hover > .team__member-name {
       z-index: 3;
     }
@@ -70,14 +74,32 @@
     flex-direction: column;
     pointer-events: none;
 
+    @media (max-width: 550px) {
+      height: 25em;
+    }
+
+    @media (max-width: 480px) {
+      width: 20em;
+      top: -8em;
+    }
+
     &--leftmost {
       left: -1.2em;
       right: auto;
+
+      @media (max-width: 480px) {
+        left: -3.5em;
+      }
+
     }
 
     &--rightmost {
       right: -1.2em;
       left: auto;
+
+      @media (max-width: 480px) {
+        right: -3.5em;
+      }
     }
   }
 
@@ -87,6 +109,14 @@
     & img {
       width: auto;
       height: 100%;
+
+      @media (max-width: 550px) {
+        height: 90%;
+      }
+
+      @media (max-width: 480px) {
+        height: 80%;
+      }
     }
   }
 
@@ -109,6 +139,14 @@
 
   &__social-link {
     margin: 0.5em;
+
+    @media (max-width: 480px) {
+      margin: 0 0.5em;
+
+      .fa {
+        vertical-align: top;
+      }
+    }
 
     .fa-github-square {
       color: #333;

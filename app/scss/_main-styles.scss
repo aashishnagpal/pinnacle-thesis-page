@@ -1,13 +1,25 @@
 .logo-image {
   width: 20em;
   opacity: 0.8;
+
+  @media (max-width: 480px) {
+    width: 15em;
+  }
 }
 
 .student-name {
   color: #e37779;
   font-size: 4em;
-  font-weight: 100;
+  font-weight: 300;
   margin-bottom: 1rem;
+
+  @media (max-width: 480px) {
+    font-size: 3em;
+  }
+
+  @media (max-width: 360px) {
+    font-size: 2.5em;
+  }
 }
 
 .last-name {
@@ -23,6 +35,10 @@
   display: inline-block;
   padding: 0.5em 0;
   position: relative;
+
+  @media (max-width: 360px) {
+    font-size: 1.5rem;
+  }
 
   &::before, &::after {
     content: '';
@@ -50,6 +66,11 @@
   font-size: 2rem;
   line-height: 1.5;
 
+  @media (max-width: 360px) {
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+
   &:last-of-type {
     padding-bottom: 3rem;
   }
@@ -61,12 +82,15 @@
   font-size: 3rem;
   word-spacing: 3px;
   letter-spacing: 1px;
+
+  @media (max-width: 360px) {
+    font-size: 2.5rem;
+  }
 }
 
 .featured-image {
   max-width: 100%;
 }
-
 
 .thesis {
   &__section {
@@ -87,7 +111,7 @@
   margin-bottom: 5rem;
 
   &__title {
-    color: #E6787A;
+    color: #e6787a;
     text-transform: capitalize;
     font-size: 2.6rem;
     padding: 2.5rem 0 0;

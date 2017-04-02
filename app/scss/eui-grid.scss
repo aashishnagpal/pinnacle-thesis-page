@@ -3,18 +3,26 @@
   $gutter-width: 1.6% !default;
 
   &__container {
-    width: 100%;
-    max-width: 960px;
+    width: 80%;
     margin: 0 auto;
     padding-left: 0.5em;
     padding-right: 0.5em;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 780px) {
+      width: 85%;
+    }
+
+    @media (max-width: 550px) {
+      width: 90%;
+    }
   }
 
   &__row {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
   }
 
   &__column {
@@ -22,6 +30,10 @@
 
     &:first-child {
       margin-left: 0;
+    }
+
+    @media (max-width: 550px) {
+      margin: 1% 0;
     }
   }
 
@@ -46,6 +58,10 @@
   @for $col-size from 1 through $columns {
     &__col-size-#{$col-size}-of-#{$columns} {
       width: col-width($columns, $gutter-width, $col-size);
+
+      @media (max-width: 550px) {
+        width: 100%;
+      }
     }
   }
 
@@ -56,6 +72,14 @@
 
       &:first-child {
         margin-left: $offset - $gutter-width;
+      }
+
+      @media (max-width: 550px) {
+        margin-left: 0;
+
+        &:first-child {
+          margin-left: 0;
+        }
       }
     }
   }
