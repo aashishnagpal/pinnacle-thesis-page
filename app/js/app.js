@@ -33,7 +33,7 @@
         {
           "firstName": "Jonas",
           "lastName": "Lininger",
-          "photoUrl": "https://images.pexels.com/photos/101584/pexels-photo-101584.jpeg?w=470&h=210&auto=compress&cs=tinysrgb",
+          "photoUrl": "../images/profile_pic_1.jpg",
           "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a semper sem. Ut pellentesque libero ut ultricies vehicula. Morbi suscipit felis nulla, luctus ornare nunc fringilla et",
           "portfolioUrl": "#",
           "githubUrl": "#",
@@ -44,7 +44,7 @@
         {
           "firstName": "Mariam",
           "lastName": "Casaus",
-          "photoUrl": "https://images.pexels.com/photos/27411/pexels-photo-27411.jpg?w=470&h=210&auto=compress&cs=tinysrgb",
+          "photoUrl": "../images/profile_pic_2.jpg",
           "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a semper sem. Ut pellentesque libero ut ultricies vehicula. Morbi suscipit felis nulla, luctus ornare nunc fringilla et",
           "portfolioUrl": "#",
           "githubUrl": "#",
@@ -55,7 +55,7 @@
         {
           "firstName": "Herbert",
           "lastName": "Stamper",
-          "photoUrl": "https://images.pexels.com/photos/119705/pexels-photo-119705.jpeg?w=470&h=210&auto=compress&cs=tinysrgb",
+          "photoUrl": "../images/profile_pic_3.jpg",
           "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a semper sem. Ut pellentesque libero ut ultricies vehicula. Morbi suscipit felis nulla, luctus ornare nunc fringilla et",
           "portfolioUrl": "#",
           "githubUrl": "#",
@@ -64,9 +64,9 @@
           "linkedInUrl": "#"
         },
         {
-          "firstName": "Alyssa",
+          "firstName": "Alex",
           "lastName": "Mcglothin",
-          "photoUrl": "https://images.pexels.com/photos/206559/pexels-photo-206559.jpeg?w=470&h=210&auto=compress&cs=tinysrgb",
+          "photoUrl": "../images/profile_pic_1.jpg",
           "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a semper sem. Ut pellentesque libero ut ultricies vehicula. Morbi suscipit felis nulla, luctus ornare nunc fringilla et",
           "portfolioUrl": "#",
           "githubUrl": "#",
@@ -75,9 +75,9 @@
           "linkedInUrl": "#"
         },
         {
-          "firstName": "Claudio",
+          "firstName": "Claudia",
           "lastName": "Cunha",
-          "photoUrl": "https://images.pexels.com/photos/211050/pexels-photo-211050.jpeg?w=470&h=210&auto=compress&cs=tinysrgb",
+          "photoUrl": "../images/profile_pic_2.jpg",
           "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a semper sem. Ut pellentesque libero ut ultricies vehicula. Morbi suscipit felis nulla, luctus ornare nunc fringilla et",
           "portfolioUrl": "#",
           "githubUrl": "#",
@@ -86,9 +86,9 @@
           "linkedInUrl": "#"
         },
         {
-          "firstName": "Elvera",
+          "firstName": "Elvis",
           "lastName": "Stacks",
-          "photoUrl": "https://images.pexels.com/photos/27949/pexels-photo-27949.jpg?w=470&h=210&auto=compress&cs=tinysrgb",
+          "photoUrl": "../images/profile_pic_3.jpg",
           "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a semper sem. Ut pellentesque libero ut ultricies vehicula. Morbi suscipit felis nulla, luctus ornare nunc fringilla et",
           "portfolioUrl": "#",
           "githubUrl": "#",

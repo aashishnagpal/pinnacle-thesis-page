@@ -1,9 +1,5 @@
 .formScanner {
-  //margin: 0 auto;
-  //display: flex;
   width: 100%;
-  //flex-flow: row wrap;
-  //justify-content: center;
   border-bottom: 1px solid #93abb1;
   padding: 5rem 0;
   position: relative;
@@ -21,7 +17,6 @@
 
 .formScanner__inputContainer, .formScanner__submitContainer {
   position: relative;
-  //margin: 10px;
   width: 100%;
   overflow: visible;
 }
@@ -61,7 +56,6 @@
   color: white;
   font-weight: 300;
   cursor: pointer;
-  //font-size: 1.1rem;
 }
 
 .formScanner__submit:focus, .formScanner__submit:hover {
@@ -90,6 +84,10 @@
   color: #435f64;
   width: 100%;
   padding: 1.5rem 1.8rem;
+
+  &[type="email"] {
+    padding: 1.5rem 2.5rem;
+  }
 }
 
 .formScanner__submitMask > .formScanner__submit {
@@ -97,7 +95,15 @@
   color: white;
   width: 100%;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
+
+  @media (max-width: 800px) {
+    font-size: 1.6rem;
+  }
+
+  @media (max-width: 550px) {
+    font-size: 2rem;
+  }
 }
 
 .formScanner__submitMask > .formScanner__submit:hover {
@@ -145,15 +151,14 @@
 @keyframes formScanner__coverInputAnimation {
   0% {
     width: 0;
-    border-right: 3px solid lightgreen;
+    border-right-width: 3px;
   }
   70% {
     width: calc(100% + 15px);
-    border-right: 3px solid lightgreen;
+    border-right-width: 3px;
   }
-
   95% {
-    border-right: 3px solid lightgreen;
+    border-right-width: 3px;
   }
   100% {
     border-right: 0;
@@ -163,15 +168,16 @@
 @keyframes formScanner__coverSubmitAnimation {
   0% {
     width: 0;
-    border-right: 3px solid transparent;
+    opacity: 0;
+    border-right: 3px solid lightgreen;
   }
   60% {
+    opacity: 1;
     width: 0;
-    border-right: 3px solid transparent;
   }
-
   100% {
     border-right: 3px solid lightgreen;
+    width: calc(100% + 50px);
   }
 }
 
@@ -179,7 +185,6 @@
   0% {
     border-right: 0;
   }
-
   99% {
     border-right: 0;
   }
@@ -207,15 +212,12 @@
   0% {
     border-right: 3px solid rgba(255, 0, 0, 0);
   }
-
   33% {
     border-right: 3px solid rgba(255, 0, 0, 1);
   }
-
   66% {
     border-right: 3px solid rgba(255, 0, 0, 0);
   }
-
   100% {
     border-right: 3px solid rgba(255, 0, 0, 1);
   }

@@ -17,7 +17,9 @@ var formScannerScript = (function () {
       }
       formScannerMask.querySelector('input').removeAttribute('required');
       formScannerMask.querySelector('input').removeAttribute("tabindex");
-      formScannerMask.querySelector('input').setAttribute("disabled", "");
+      formScannerMask.querySelector('input').addEventListener("focus", function() {
+        this.parentNode.parentNode.querySelector('input').focus();
+      });
       formScannerInputConts[i].appendChild(formScannerMask);
 
       formScannerInput.addEventListener('focus', function () {
@@ -26,7 +28,7 @@ var formScannerScript = (function () {
         formScannerMask.classList.add('formScanner__cursor');
       });
 
-      formScannerInput.addEventListener('focusout', function () {
+      formScannerInput.addEventListener('blur', function () {
         var formScannerMask = this.parentNode.querySelector('.formScanner__inputMask');
         formScannerMask.classList.remove('formScanner__cursor');
         formScannerMask.classList.remove('formScanner__invalidInput');
