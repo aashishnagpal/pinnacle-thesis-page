@@ -33,7 +33,7 @@
         {
           "firstName": "Jonas",
           "lastName": "Lininger",
-          "photoUrl": "../images/profile_pic_1.jpg",
+          "photoUrl": "images/profile_pic_1.jpg",
           "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a semper sem. Ut pellentesque libero ut ultricies vehicula. Morbi suscipit felis nulla, luctus ornare nunc fringilla et",
           "portfolioUrl": "#",
           "githubUrl": "#",
@@ -44,7 +44,7 @@
         {
           "firstName": "Mariam",
           "lastName": "Casaus",
-          "photoUrl": "../images/profile_pic_2.jpg",
+          "photoUrl": "images/profile_pic_2.jpg",
           "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a semper sem. Ut pellentesque libero ut ultricies vehicula. Morbi suscipit felis nulla, luctus ornare nunc fringilla et",
           "portfolioUrl": "#",
           "githubUrl": "#",
@@ -55,7 +55,7 @@
         {
           "firstName": "Herbert",
           "lastName": "Stamper",
-          "photoUrl": "../images/profile_pic_3.jpg",
+          "photoUrl": "images/profile_pic_3.jpg",
           "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a semper sem. Ut pellentesque libero ut ultricies vehicula. Morbi suscipit felis nulla, luctus ornare nunc fringilla et",
           "portfolioUrl": "#",
           "githubUrl": "#",
@@ -66,7 +66,7 @@
         {
           "firstName": "Alex",
           "lastName": "Mcglothin",
-          "photoUrl": "../images/profile_pic_1.jpg",
+          "photoUrl": "images/profile_pic_1.jpg",
           "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a semper sem. Ut pellentesque libero ut ultricies vehicula. Morbi suscipit felis nulla, luctus ornare nunc fringilla et",
           "portfolioUrl": "#",
           "githubUrl": "#",
@@ -77,7 +77,7 @@
         {
           "firstName": "Claudia",
           "lastName": "Cunha",
-          "photoUrl": "../images/profile_pic_2.jpg",
+          "photoUrl": "images/profile_pic_2.jpg",
           "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a semper sem. Ut pellentesque libero ut ultricies vehicula. Morbi suscipit felis nulla, luctus ornare nunc fringilla et",
           "portfolioUrl": "#",
           "githubUrl": "#",
@@ -88,7 +88,7 @@
         {
           "firstName": "Elvis",
           "lastName": "Stacks",
-          "photoUrl": "../images/profile_pic_3.jpg",
+          "photoUrl": "images/profile_pic_3.jpg",
           "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a semper sem. Ut pellentesque libero ut ultricies vehicula. Morbi suscipit felis nulla, luctus ornare nunc fringilla et",
           "portfolioUrl": "#",
           "githubUrl": "#",
