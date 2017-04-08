@@ -4,6 +4,14 @@
 var formScannerScript = (function () {
   'use strict';
   var setMasking = function () {
+    function _formScannerMaskClick() {
+      var formScannerInput = this.querySelector('.formScanner__input');
+      var formScannerMask = this.querySelector('.formScanner__inputMask');
+      formScannerMask.classList.remove('formScanner__maskCover');
+      formScannerMask.classList.add('formScanner__cursor');
+      formScannerInput.focus();
+    }
+
     var formScannerInputConts = document.querySelectorAll('.formScanner__inputContainer');
     var formScanner = document.querySelector('.formScanner');
     for (var i = 0; i < formScannerInputConts.length; i++) {
@@ -17,7 +25,7 @@ var formScannerScript = (function () {
       }
       formScannerMask.querySelector('input').removeAttribute('required');
       formScannerMask.querySelector('input').removeAttribute("tabindex");
-      formScannerMask.querySelector('input').addEventListener("focus", function() {
+      formScannerMask.querySelector('input').addEventListener("focus", function () {
         this.parentNode.parentNode.querySelector('input').focus();
       });
       formScannerInputConts[i].appendChild(formScannerMask);
@@ -42,21 +50,41 @@ var formScannerScript = (function () {
         e.preventDefault();
       });
 
-      formScannerInputConts[i].addEventListener('click', formScannerMaskClick);
+      formScannerInputConts[i].addEventListener('click', _formScannerMaskClick);
 
     }
 
 
-    function formScannerMaskClick() {
-      var formScannerInput = this.querySelector('.formScanner__input');
-      var formScannerMask = this.querySelector('.formScanner__inputMask');
-      formScannerMask.classList.remove('formScanner__maskCover');
-      formScannerMask.classList.add('formScanner__cursor');
-      formScannerInput.focus();
+    function _submitFormCallback(message) {
+      console.log('called');
+      var formScannerSubmitMask = document.querySelector('.formScanner__submitMask');
+      formScannerSubmitMask.querySelector('.formScanner__submit').setAttribute('value', message);
+      formScannerSubmitMask.classList.add('formScanner__submitMaskCover');
+
+      for (var j = 0; j < formScannerInputConts.length; j++) {
+        formScannerInputConts[j].querySelector('.formScanner__input').disabled = true;
+        formScannerInputConts[j].querySelector('.formScanner__inputMask input').classList.add('formScanner__clearInput');
+        formScannerInputConts[j].removeEventListener('click', _formScannerMaskClick);
+      }
     }
+
+    function _successCallback() {
+      _submitFormCallback('Thank You. Check your email.');
+    }
+
+    function _existingMemberCallback() {
+      _submitFormCallback('We have you registered already.');
+    }
+
+    function _errorCallback() {
+      _submitFormCallback('Sorry. Please try again.');
+    }
+
+
+
+    var subscribe = mailchimpIntegration.subscribe();
 
     var formScannerSubmitConts = document.querySelectorAll('.formScanner__submitContainer');
-    console.log(formScannerSubmitConts.length);
     for (var i = 0; i < formScannerSubmitConts.length; i++) {
       var formScannerSubmit = formScannerSubmitConts[i].querySelector('.formScanner__submit');
       var formScannerSubmitMask = formScannerSubmitConts[i].cloneNode(true);
@@ -64,18 +92,11 @@ var formScannerScript = (function () {
       formScannerSubmitMask.className = 'formScanner__submitMask';
       formScannerSubmitConts[i].appendChild(formScannerSubmitMask);
 
-      formScannerSubmit.addEventListener('click', function () {
-        if (formScanner.checkValidity()) {
-          var formScannerSubmitMask = this.parentNode.querySelector('.formScanner__submitMask');
-          formScannerSubmitMask.querySelector('.formScanner__submit').setAttribute('value', 'Thank You. Check your' +
-              ' email.');
-          formScannerSubmitMask.classList.add('formScanner__submitMaskCover');
 
-          for (var j = 0; j < formScannerInputConts.length; j++) {
-            formScannerInputConts[j].querySelector('.formScanner__input').disabled = true;
-            formScannerInputConts[j].querySelector('.formScanner__inputMask input').classList.add('formScanner__clearInput');
-            formScannerInputConts[j].removeEventListener('click', formScannerMaskClick);
-          }
+      formScannerSubmit.addEventListener('click', function (event) {
+        event.preventDefault();
+        if (formScanner.checkValidity()) {
+          subscribe(_successCallback, _existingMemberCallback, _errorCallback);
         } else {
           formScanner.querySelector(':invalid').focus();
           formScanner.querySelector(':invalid ~ .formScanner__inputMask').classList.add('formScanner__invalidInput');

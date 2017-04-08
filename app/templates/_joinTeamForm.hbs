@@ -3,23 +3,26 @@
     <h4 class="join-team-form__title">{{mailChimpFormTitle}}</h4>
   </div>
 </div>
-<form action="" class="formScanner" onsubmit="return false">
+<form action="" method="POST" id="join-team" class="formScanner">
   <div class="eui-grid__row">
     <div class="eui-grid__column eui-grid__col-size-4-of-12 eui-grid__offset-by-2-col">
       <div class="formScanner__inputContainer">
-        <input type="text" class="formScanner__input" required tabindex="1" placeholder="First Name"/>
+        <input type="text" class="formScanner__input" id="firstName" name="firstName" required tabindex="1"
+               placeholder="First Name" value="test"/>
       </div>
     </div>
     <div class="eui-grid__column eui-grid__col-size-4-of-12">
       <div class="formScanner__inputContainer">
-        <input type="text" class="formScanner__input" required tabindex="2" placeholder="Last Name"/>
+        <input type="text" class="formScanner__input" id="lastName" name="lastName" required tabindex="2"
+               placeholder="Last Name" value="test01"/>
       </div>
     </div>
   </div>
   <div class="eui-grid__row">
     <div class="eui-grid__column eui-grid__col-size-4-of-12 eui-grid__offset-by-2-col">
       <div class="formScanner__inputContainer">
-        <input type="email" class="formScanner__input" required tabindex="3" placeholder="Email"/>
+        <input type="email" class="formScanner__input" id="emailId" name="emailId" required tabindex="3"
+               placeholder="Email" value=""/>
       </div>
     </div>
     <div class="eui-grid__column eui-grid__col-size-4-of-12">

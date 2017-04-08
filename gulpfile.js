@@ -125,6 +125,7 @@ gulp.task('scripts', function () {
     'node_modules/handlebars/dist/handlebars.runtime.js',
     'dist/templates/templates.js',
     'app/js/team-member.js',
+    'app/js/mailchimp-form-integration.js',
     'app/js/formScanner.js',
     'app/js/app.js'
   ])
