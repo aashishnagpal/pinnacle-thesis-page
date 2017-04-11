@@ -14,8 +14,8 @@ var formScannerScript = (function () {
 
     var formScannerInputConts = document.querySelectorAll('.formScanner__inputContainer');
     var formScanner = document.querySelector('.formScanner');
-    for (var i = 0; i < formScannerInputConts.length; i++) {
 
+    for (var i = 0; i < formScannerInputConts.length; i++) {
       var formScannerInput = formScannerInputConts[i].querySelector('.formScanner__input');
       var formScannerMask = formScannerInputConts[i].cloneNode(true);
       formScannerMask.className = 'formScanner__inputMask';
@@ -51,12 +51,9 @@ var formScannerScript = (function () {
       });
 
       formScannerInputConts[i].addEventListener('click', _formScannerMaskClick);
-
     }
 
-
     function _submitFormCallback(message) {
-      console.log('called');
       var formScannerSubmitMask = document.querySelector('.formScanner__submitMask');
       formScannerSubmitMask.querySelector('.formScanner__submit').setAttribute('value', message);
       formScannerSubmitMask.classList.add('formScanner__submitMaskCover');
@@ -80,9 +77,8 @@ var formScannerScript = (function () {
       _submitFormCallback('Sorry. Please try again.');
     }
 
-
-
-    var subscribe = mailchimpIntegration.subscribe();
+    // TODO: Mailchimp Integration: need to come back to this later
+    // var subscribe = mailchimpIntegration.subscribe();
 
     var formScannerSubmitConts = document.querySelectorAll('.formScanner__submitContainer');
     for (var i = 0; i < formScannerSubmitConts.length; i++) {
@@ -92,11 +88,12 @@ var formScannerScript = (function () {
       formScannerSubmitMask.className = 'formScanner__submitMask';
       formScannerSubmitConts[i].appendChild(formScannerSubmitMask);
 
-
       formScannerSubmit.addEventListener('click', function (event) {
         event.preventDefault();
         if (formScanner.checkValidity()) {
-          subscribe(_successCallback, _existingMemberCallback, _errorCallback);
+          // TODO: Mailchimp Integration: need to come back to this later
+          // subscribe(_successCallback, _existingMemberCallback, _errorCallback);
+          _successCallback();
         } else {
           formScanner.querySelector(':invalid').focus();
           formScanner.querySelector(':invalid ~ .formScanner__inputMask').classList.add('formScanner__invalidInput');
